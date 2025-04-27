@@ -14,16 +14,40 @@ To write a C program print the lowercase English word corresponding to the numbe
    * Step 4.	Exit the program.
  
 ## Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    switch(n) {
+        case 5:
+            printf("seventy one\n");
+            break;
+        case 6:
+            printf("seventy two\n");
+            break;
+        case 13:
+            printf("seventy three\n");
+            break;
+        case 79:
+            printf("seventy nine\n");
+            break;
+        default:
+            printf("Greater than 13\n");
+    }
 
+    return 0;
+}
 
-
+```
 ## Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/d6824179-6f0f-4100-ab87-e8804c0a2542)
+
 
 
 ## Result:
@@ -41,21 +65,41 @@ To write a C program to print ten space-separated integers in a single line deno
    * Step 6.	End
  
 ## Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    char a[50];
+    int i, c[4] = {0, 0, 0, 0}; // Counter for digits 0, 1, 2, 3
 
+    printf("Enter a string: ");
+    scanf("%s", a);
 
+    for(i = 0; a[i] != '\0'; i++) {
+        if(a[i] == '0') {
+            c[0]++;
+        } else if(a[i] == '1') {
+            c[1]++;
+        } else if(a[i] == '2') {
+            c[2]++;
+        } else if(a[i] == '3') {
+            c[3]++;
+        }
+    }
 
+    // Print the frequency of digits 0, 1, 2, and 3
+    for(i = 0; i < 4; i++) {
+        printf("%d ", c[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+```
 
 ## Output:
-
-
-//paste your output here
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/59c86506-20c8-4e86-9205-e6d237212b5d)
 
 ## Result:
 Thus, the program is verified successfully
@@ -77,20 +121,58 @@ To write a C program to print all of its permutations in strict lexicographical 
    * Step 7.	End
  
 ## Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-//type your code here
+// Function to swap two characters in a string
+void swap(char* x, char* y) {
+    char temp = *x;
+    *x = *y;
+    *y = temp;
+}
 
+// Function to generate and print all permutations of a string
+void permute(char* str, int left, int right) {
+    if (left == right) {
+        printf("%s\n", str);  // Print the permutation
+    } else {
+        for (int i = left; i <= right; i++) {
+            swap((str + left), (str + i));  // Swap characters
+            permute(str, left + 1, right);  // Recursively generate permutations
+            swap((str + left), (str + i));  // Backtrack and restore the string
+        }
+    }
+}
 
+int main() {
+    char* str;
+    int n;
 
+    // Input the number of strings (length of string)
+    printf("Enter the string: ");
+    str = (char*)malloc(100 * sizeof(char));  // Dynamically allocate memory for the string
+    scanf("%s", str);
 
+    int length = strlen(str);
+    
+    // Sort the string in lexicographical order to generate permutations in order
+    qsort(str, length, sizeof(char), (int (*)(const void*, const void*)) strcmp);
+
+    // Print all permutations of the string
+    printf("All permutations in lexicographical order:\n");
+    permute(str, 0, length - 1);
+
+    // Free the allocated memory
+    free(str);
+
+    return 0;
+}
+
+```
 ## Output:
-
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/ba473bea-56c7-46b6-a951-798196269ec4)
 
 
 ## Result:
@@ -109,20 +191,39 @@ To write a C program to print a pattern of numbers from 1 to n as shown below.
    * Step 7.	End
  
 ## Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    int n, i, j, len, min;
+    
+    // Step 3: Read the value of n from the user
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    
+    // Step 4: Calculate the length of the side of the square matrix
+    len = 2 * n - 1;
+    
+    // Step 5: Matrix Generation Loop
+    for(i = 0; i < len; i++) {
+        for(j = 0; j < len; j++) {
+            // Step 6: Calculate min as the minimum distance to the borders
+            min = (i < j) ? i : j;
+            min = (min < len - i - 1) ? min : len - i - 1;
+            min = (min < len - j - 1) ? min : len - j - 1;
+            
+            // Print the number based on the min value
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
 
-
-
-
+```
 ## Output:
-
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/be98c2f3-80d8-458e-8e01-cf2ecfa8afea)
 
 
 ## Result:
@@ -147,21 +248,35 @@ To write a C program that calculates the square of a number using a function tha
    * Step 5. End.
 
 ## Program:
+```
+#include <stdio.h>
 
-//type your code here
+// Step 2: Define function square() with no arguments
+int square() {
+    int num;
+    
+    // Step 3: Ask user for input
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    // Calculate and return the square
+    return num * num;
+}
 
+int main() {
+    int result;
+    
+    // Step 4: Call the square() function and display the result
+    result = square();
+    
+    printf("Square of the number: %d\n", result);
+    
+    return 0;
+}
 
-
-
+```
 ## Output:
-
-
-//paste your output here
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/1b947d79-a647-477a-a9a3-08b1377db604)
 
 ## Result:
 Thus, the program is verified successfully
