@@ -12,7 +12,7 @@ To write a C program to display stack elements using an array.
    * Step 7.	Use the display function to visualize the stack's contents
  
 ## Program:
-```
+```C
 #include <stdio.h>
 
 #define MAX 5  // Define the maximum size of the stack
@@ -92,7 +92,7 @@ To create a C program to push the given element in to a stack using array.
    * Step 4.	Call the push function as needed.
  
 ## Program:
-```
+```C
 #include <stdio.h>
 
 #define MAX 5  // Define the maximum size of the stack
@@ -164,7 +164,7 @@ To write a C program to display queue elements using array
    * Step 4.	Call the display function and perform other queue operations as needed.
  
 ## Program:
-```
+```C
 #include <stdio.h>
 
 #define MAX 5  // Define the maximum size of the queue
@@ -248,7 +248,7 @@ To write a C program to insert elements in queue using array.
    * Step 4.	Call the enqueue function as needed.
 
 ## Program:
-```
+```C
 #include <stdio.h>
 
 #define MAX 5  // Define the maximum size of the queue
@@ -323,7 +323,7 @@ To create a function in C that deletes an element from a queue implemented using
 
 
 ## Program:
-```
+```C
 #include <stdio.h>
 
 #define MAX 5  // Define the maximum size of the queue
