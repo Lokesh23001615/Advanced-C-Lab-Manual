@@ -16,7 +16,7 @@ To write a C program for array of structure to check eligibility for the vaccine
    * Step 6: Return 0
 
 ## Program:
-```
+```C
 #include <stdio.h>
 
 struct eligible {
@@ -83,7 +83,7 @@ To write a C program for passing structure as function and returning a structure
    * Step 7: Return 0
  
 ## Program:
-```
+```C
 #include <stdio.h>
 
 struct numbers {
@@ -147,7 +147,7 @@ To write a C program to read a file name from user
    * Step 15:Return 0 to indicate successful program execution.
  
 ## Program:
-```
+```C
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -207,7 +207,7 @@ To write a C program to read, a file and insert text in that file
    * Step 12. Return 0 to indicate successful program execution.
  
 ## Program:
-```
+```C
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -278,7 +278,7 @@ The aim of this program is to dynamically allocate memory to store information a
    * Step 13.End the program by returning 0.
 
 ## Program:
-```
+```C
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -319,7 +319,7 @@ int main() {
 }
 
 
-```
+```C
 
 ## Output:
 ![image](https://github.com/user-attachments/assets/19372f6c-b966-45ca-9f90-dc23afbc26e6)
