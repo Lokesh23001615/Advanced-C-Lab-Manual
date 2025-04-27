@@ -319,7 +319,7 @@ int main() {
 }
 
 
-```C
+```
 
 ## Output:
 ![image](https://github.com/user-attachments/assets/19372f6c-b966-45ca-9f90-dc23afbc26e6)
