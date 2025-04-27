@@ -14,7 +14,7 @@ To write a C program print the lowercase English word corresponding to the numbe
    * Step 4.	Exit the program.
  
 ## Program:
-```
+```C
 #include <stdio.h>
 
 int main() {
@@ -53,7 +53,7 @@ int main() {
 ## Result:
 Thus, the program is verified successfully
  
-# EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
+# EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS  IN A SINGLE LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
 ## Aim:
 To write a C program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3.
 ## Algorithm:
@@ -65,7 +65,7 @@ To write a C program to print ten space-separated integers in a single line deno
    * Step 6.	End
  
 ## Program:
-```
+```C
 #include <stdio.h>
 
 int main() {
@@ -121,7 +121,7 @@ To write a C program to print all of its permutations in strict lexicographical 
    * Step 7.	End
  
 ## Program:
-```
+```C
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -191,7 +191,7 @@ To write a C program to print a pattern of numbers from 1 to n as shown below.
    * Step 7.	End
  
 ## Program:
-```
+```C
 #include <stdio.h>
 
 int main() {
@@ -248,7 +248,7 @@ To write a C program that calculates the square of a number using a function tha
    * Step 5. End.
 
 ## Program:
-```
+```C
 #include <stdio.h>
 
 // Step 2: Define function square() with no arguments
