@@ -17,12 +17,51 @@ To write a C program for array of structure to check eligibility for the vaccine
 
 ## Program:
 ```
+#include <stdio.h>
+
+struct eligible {
+    int age;
+    char n[50];
+};
+
+int main() {
+    int i, num;
+    
+    printf("Enter number of persons: ");
+    scanf("%d", &num);
+    
+    struct eligible e[num];
+    
+    for(i = 0; i < num; i++) {
+        printf("\nEnter name of person %d: ", i + 1);
+        scanf("%s", e[i].n);
+        
+        printf("Enter age of person %d: ", i + 1);
+        scanf("%d", &e[i].age);
+    }
+    
+    printf("\n--- Vaccine Eligibility Check ---\n");
+    
+    for(i = 0; i < num; i++) {
+        printf("\nName: %s\n", e[i].n);
+        printf("Age: %d\n", e[i].age);
+        
+        if(e[i].age > 6) {
+            printf("Vaccine Eligibility: Yes\n");
+        } else {
+            printf("Vaccine Eligibility: No\n");
+        }
+    }
+    
+    return 0;
+}
+
 ```
 
 
 ## Output:
+![image](https://github.com/user-attachments/assets/1003533b-50e8-42fa-9967-3fbacd157a8b)
 
-//paste your output here
 
 
 ## Result:
@@ -45,18 +84,39 @@ To write a C program for passing structure as function and returning a structure
  
 ## Program:
 ```
+#include <stdio.h>
 
-//type your code here
+struct numbers {
+    int a;
+    int b;
+};
+
+struct numbers add(struct numbers n) {
+    struct numbers result;
+    result.a = n.a + n.b;
+    return result;
+}
+
+int main() {
+    struct numbers n, sum;
+    
+    printf("Enter two numbers:\n");
+    scanf("%d %d", &n.a, &n.b);
+    
+    sum = add(n);
+    
+    printf("Sum = %d\n", sum.a);
+    
+    return 0;
+}
+
 
 ```
 
 
 ## Output:
 
-
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/8f8e69ab-43bb-4e4f-b041-2851211f5590)
 
 
 ## Result:
@@ -88,13 +148,39 @@ To write a C program to read a file name from user
  
 ## Program:
 ```
-//type your code here
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *p;
+    char name[100];
+    
+    printf("Enter the file name to create: ");
+    scanf("%s", name);
+    
+    p = fopen(name, "w");
+    
+    if (p == NULL) {
+        printf("Error opening file!\n");
+        return 1; // Non-zero return indicates failure
+    }
+    
+    printf("File '%s' created and opened successfully.\n", name);
+    
+    fclose(p);
+    
+    printf("File '%s' closed successfully.\n", name);
+    
+    return 0;
+}
+
 
 ```
 
 
 ## Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/a817c695-7c49-4efd-9254-0e05b7e0b604)
+
 
 ## Result:
 Thus, the program is verified successfully
@@ -122,13 +208,49 @@ To write a C program to read, a file and insert text in that file
  
 ## Program:
 ```
-//type your code here
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *p;
+    char name[100], text[200];
+    int num, i;
+    
+    printf("Enter the file name to create and write into: ");
+    scanf("%s", name);
+    
+    printf("Enter the number of lines you want to insert: ");
+    scanf("%d", &num);
+    
+    p = fopen(name, "w");
+    
+    if (p == NULL) {
+        printf("Error opening file!\n");
+        return 1; // Non-zero return indicates failure
+    }
+    
+    printf("File '%s' opened successfully.\n", name);
+    
+    printf("Enter the text lines:\n");
+    for(i = 0; i < num; i++) {
+        printf("Line %d: ", i + 1);
+        scanf(" %[^\n]", text); // To read a line with spaces
+        fputs(text, p);
+        fputs("\n", p); // Add a new line after each string
+    }
+    
+    fclose(p);
+    
+    printf("Data written to '%s' successfully.\n", name);
+    
+    return 0;
+}
+
 ```
 
 ## Output:
+![image](https://github.com/user-attachments/assets/0970ab34-bc98-4111-bcf1-760068eb05cf)
 
-
-//paste your output here
 
 ## Result:
 Thus, the program is verified successfully
@@ -157,15 +279,50 @@ The aim of this program is to dynamically allocate memory to store information a
 
 ## Program:
 ```
-//type your code here
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Subject {
+    char name[50];
+    int marks;
+};
+
+int main() {
+    struct Subject *s;
+    int n, i;
+    
+    printf("Enter the number of subjects: ");
+    scanf("%d", &n);
+    
+    s = (struct Subject *)malloc(n * sizeof(struct Subject));
+    
+    if (s == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1; // Non-zero return indicates failure
+    }
+    
+    for (i = 0; i < n; i++) {
+        printf("\nEnter name of subject %d: ", i + 1);
+        scanf("%s", s[i].name);
+        printf("Enter marks for subject %d: ", i + 1);
+        scanf("%d", &s[i].marks);
+    }
+    
+    printf("\n--- Subject Details ---\n");
+    for (i = 0; i < n; i++) {
+        printf("Subject %d: %s, Marks: %d\n", i + 1, s[i].name, s[i].marks);
+    }
+    
+    free(s);
+    
+    return 0;
+}
+
 
 ```
 
 ## Output:
-
-
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/19372f6c-b966-45ca-9f90-dc23afbc26e6)
 
 ## Result:
 Thus, the program is verified successfully
