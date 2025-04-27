@@ -11,10 +11,43 @@ To write a C program to create a function to find the greatest number
  
 ## Program:
 ```C
+#include <stdio.h>
+
+// Function to find the greatest of four numbers
+int max_of_four(int a, int b, int c, int d) {
+    int max = a;
+    
+    if (b > max)
+        max = b;
+    if (c > max)
+        max = c;
+    if (d > max)
+        max = d;
+    
+    return max;
+}
+
+int main() {
+    int n1, n2, n3, n4, greater;
+    
+    // Taking input from the user
+    printf("Enter four numbers: ");
+    scanf("%d %d %d %d", &n1, &n2, &n3, &n4);
+    
+    // Calling the function to find the greatest number
+    greater = max_of_four(n1, n2, n3, n4);
+    
+    // Displaying the greatest number
+    printf("The greatest number is: %d\n", greater);
+    
+    return 0;
+}
+
 ```
 
 ## Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/688a2086-6d03-49be-862e-a50af01080ae)
+
 
 ## Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -36,14 +69,57 @@ To write a C program to print the maximum values for the AND, OR and XOR compari
  
 ## Program:
 ```C
+#include <stdio.h>
+
+// Function to calculate the maximum values for AND, OR, and XOR operations
+void calculate_the_max(int n, int k) {
+    int a = 0, o = 0, x = 0;
+    
+    // Nested loops to calculate the maximum values for AND, OR, and XOR
+    for (int i = 1; i <= n; i++) {
+        for (int j = i + 1; j <= n; j++) {
+            // AND operation
+            if ((i & j) < k && (i & j) > a) {
+                a = i & j;
+            }
+            // OR operation
+            if ((i | j) < k && (i | j) > o) {
+                o = i | j;
+            }
+            // XOR operation
+            if ((i ^ j) < k && (i ^ j) > x) {
+                x = i ^ j;
+            }
+        }
+    }
+
+    // Print the results for AND, OR, and XOR
+    printf("Max AND: %d\n", a);
+    printf("Max OR: %d\n", o);
+    printf("Max XOR: %d\n", x);
+}
+
+int main() {
+    int n, k;
+
+    // Take inputs from the user
+    printf("Enter two integers n and k: ");
+    scanf("%d %d", &n, &k);
+
+    // Call the function to calculate the maximum values
+    calculate_the_max(n, k);
+
+    return 0;
+}
+
 ```
 
 ## Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/ac96a271-f261-4237-89aa-35d6d9496edb)
+
 
 ## Result:
-Thus, the program to print the maximum values for the AND, OR and XOR comparisons
-is verified successfully.
+Thus, the program to print the maximum values for the AND, OR and XOR comparisons is verified successfully.
 
 
  
@@ -60,10 +136,67 @@ To write a C program to write the logic for the requests
  
 ## Program:
 ```C
+#include <stdio.h>
+
+int main() {
+    int noshel, noque;  // Variables to store number of shelves and number of queries
+    int shelarr[50][50], nobookarr[50];  // 2D array for shelves and books, 1D array for book counts
+    int k, c, query_type, shelf_no, book_no;
+
+    // Input number of shelves and queries
+    printf("Enter the number of shelves and queries: ");
+    scanf("%d %d", &noshel, &noque);
+
+    // Initialize the shelves with books (each shelf has no books initially)
+    for (int i = 0; i < noshel; i++) {
+        nobookarr[i] = 0;  // No books initially
+    }
+
+    // Process queries
+    for (int i = 0; i < noque; i++) {
+        printf("Enter query type (1 for adding books, 2 for counting books on shelf): ");
+        scanf("%d", &query_type);
+
+        if (query_type == 1) {  // Add books to a shelf
+            printf("Enter shelf number and number of books: ");
+            scanf("%d %d", &shelf_no, &k);
+
+            // Add books to the specified shelf
+            if (shelf_no <= noshel) {
+                shelarr[shelf_no - 1][nobookarr[shelf_no - 1]] = k;
+                nobookarr[shelf_no - 1]++;
+                printf("%d books added to shelf %d\n", k, shelf_no);
+            } else {
+                printf("Invalid shelf number!\n");
+            }
+        }
+        else if (query_type == 2) {  // Count total books on a shelf
+            printf("Enter shelf number: ");
+            scanf("%d", &shelf_no);
+
+            // Count the total number of books on the specified shelf
+            if (shelf_no <= noshel) {
+                c = 0;
+                for (int j = 0; j < nobookarr[shelf_no - 1]; j++) {
+                    c += shelarr[shelf_no - 1][j];
+                }
+                printf("Total books on shelf %d: %d\n", shelf_no, c);
+            } else {
+                printf("Invalid shelf number!\n");
+            }
+        } else {
+            printf("Invalid query type!\n");
+        }
+    }
+
+    return 0;
+}
+
 ```
 
 ## Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/d9aff681-bb04-42f0-8023-2e4440b52785)
+
 
 
 ## Result:
@@ -85,10 +218,36 @@ To write a C program print the sum of the integers in the array.
    * Step 7.	Print the final sum using printf.
 
 ## Program:
-//type your code here
+```C
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    // Step 2: Take number of integers as input
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+
+    int a[n];  // Step 3: Declare an array of size n
+
+    // Step 5: Input elements and calculate sum
+    printf("Enter the integers:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+        sum += a[i];  // Add each element to sum
+    }
+
+    // Step 7: Print the final sum
+    printf("Sum of the integers in the array = %d\n", sum);
+
+    return 0;
+}
+
+```
 
 ## Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/5e04588a-2924-4107-800a-e30c2210cca3)
+
 
 ## Result:
 Thus, the program prints the sum of the integers in the array is verified successfully.
@@ -115,9 +274,40 @@ To write a C program that counts the number of words in a given sentence.
 
 ## Program:
 ```C
+#include <stdio.h>
+
+int main() {
+    char sentence[1000];
+    int i = 0, words = 0;
+    int inWord = 0; // Flag to check if currently inside a word
+
+    // Step 1: Input the sentence
+    printf("Enter a sentence: ");
+    fgets(sentence, sizeof(sentence), stdin);
+
+    // Step 3: Process each character
+    while (sentence[i] != '\0') {
+        if (sentence[i] != ' ' && sentence[i] != '\n') {
+            if (inWord == 0) {
+                words++;
+                inWord = 1;
+            }
+        } else {
+            inWord = 0;
+        }
+        i++;
+    }
+
+    // Step 5: Display the result
+    printf("Number of words in the sentence = %d\n", words);
+
+    return 0;
+}
+
+
 ```
 ## Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/97d78108-c241-441f-8d67-1101ac02c7d7)
 
 
 
